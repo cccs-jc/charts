@@ -57,9 +57,9 @@ spec:
               mountPath: '/opt/bitnami/spark/conf/'
             {{- end }}
             {{- if .Values.metrics.enabled }}
-              - name: metricsconfig
-                mountPath: '/opt/bitnami/spark/conf/metrics.properties'
-                subPath: 'metrics.properties'
+            - name: metricsconfig
+              mountPath: '/opt/bitnami/spark/conf/metrics.properties'
+              subPath: 'metrics.properties'
             {{- end }}
             {{- if .Values.security.certificatesSecretName }}
             - name: certs

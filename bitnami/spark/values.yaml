@@ -264,12 +264,12 @@ security:
   ## RPC configuration
   ##
   rpc:
-    authenticationEnabled: "no"
-    encryptionEnabled: "no"
+    authenticationEnabled: false
+    encryptionEnabled: false
 
   ## Enables local storage encryption
   ##
-  storageEncryptionEnabled: "no"
+  storageEncryptionEnabled: false
 
   ## Name of the secret that contains the certificates
   ## It should contains two keys called "spark-keystore.jks" and "spark-truststore.jks" with the files in JKS format.
@@ -279,8 +279,8 @@ security:
   ## SSL configuration
   ##
   ssl:
-    enabled: "no"
-    needClientAuth: "no"
+    enabled: false
+    needClientAuth: false
     protocol: TLSv1.2
 
 ## Service parameters
@@ -345,3 +345,7 @@ metrics:
   ## Set a custom metrics.properties configuration by using an existing configMap.
   ##
   # metricsConfigMap:
+  tls:
+  - hosts:
+    - spark.domain.com
+    secretName: spark.local-tls
